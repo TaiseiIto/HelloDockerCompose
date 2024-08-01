@@ -1,6 +1,6 @@
 .PHONY: compose
 compose:
-	docker compose up
+	docker compose up -d
 
 .PHONY: decompose
 decompose:
@@ -18,4 +18,12 @@ recompose:
 watch:
 	make decompose
 	docker compose watch
+
+.PHONY: start
+start:
+	docker compose start
+
+.PHONY: stop
+stop:
+	docker compose stop
 
