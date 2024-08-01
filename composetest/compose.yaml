@@ -1,13 +1,14 @@
+version: "3"
 services:
   web: # Define a web container.
     build: . # Build the web container by the dockerfile in the current directory.
     ports:
       - "8000:5000" # The port 5000 of the web container is seen as the port 8000 of the host.
-    develop:
-      watch:
-        - action: sync # Synchronize the host current directory and the web container's /code directory.
-          path: .
-          target: /code
+    # develop: # error "services.web Additional property develop is not allowed"
+    #   watch:
+    #     - action: sync # Synchronize the host current directory and the web container's /code directory.
+    #       path: .
+    #       target: /code
   redis: # Define a redis container.
     image: "redis:alpine"
 
