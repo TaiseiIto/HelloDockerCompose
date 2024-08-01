@@ -12,7 +12,7 @@ def get_hit_count():
             return cache.incr('hits') # https://redis.io/docs/latest/commands/incr/
         except redis.exceptions.ConnectionError as exc:
             if retries == 0:
-                rase exc
+                raise exc
             retries -= 1
             time.sleep(0.5)
 
