@@ -1,0 +1,8 @@
+services:
+  web: # Define a web container.
+    build: . # Build the web container by the dockerfile in the current directory.
+    ports:
+      - "8000:5000" # The port 5000 of the web container is seen as the port 8000 of the host.
+  redis: # Define a redis container.
+    image: "redis:alpine"
+
