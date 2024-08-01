@@ -1,5 +1,5 @@
 build:
-	docker compose up
+	docker compose up --watch
 
 delete:
 	if [ -n "$$(docker ps -a --format {{.Names}} | grep composetest-redis-1)" ]; then docker rm composetest-redis-1; fi
